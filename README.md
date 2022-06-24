@@ -33,4 +33,4 @@ npm run server
 ```
 cd client
 npm start
-```
+```ok
