@@ -11,8 +11,8 @@ import {
   BrowserRouter,
   Route,
   Routes,
-  useParams,
-  useSearchParams,
+  // useParams,
+  // useSearchParams,
 } from "react-router-dom";
 import theme from "./theme";
 
@@ -26,9 +26,9 @@ import PrivateRoute from "./components/PrivateRoute";
 import SearchView from "./components/views/SearchView";
 import MessengerView from "./components/views/MessengerView";
 import { initiateSocketConnection, socket } from "./helpers/socketHelper";
-import { useEffect } from "react";
-import { BASE_URL } from "./config";
-import { io } from "socket.io-client";
+// import { useEffect } from "react";
+// import { BASE_URL } from "./config";
+// import { io } from "socket.io-client";
 
 function App() {
   initiateSocketConnection();
@@ -48,14 +48,14 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route
+          {/* <Route
             path="/messenger"
             element={
               <PrivateRoute>
                 <MessengerView />
               </PrivateRoute>
             }
-          />
+          /> */}
           <Route path="/search" element={<SearchView />} />
           <Route path="/users/:id" element={<ProfileView />} />
           <Route path="/login" element={<LoginView />} />

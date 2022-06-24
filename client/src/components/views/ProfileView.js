@@ -8,7 +8,7 @@ import CommentBrowser from "../CommentBrowser";
 import ErrorAlert from "../ErrorAlert";
 import FindUsers from "../FindUsers";
 import Footer from "../Footer";
-import GoBack from "../GoBack";
+// import GoBack from "../GoBack";
 import GridLayout from "../GridLayout";
 import Loading from "../Loading";
 import MobileProfile from "../MobileProfile";

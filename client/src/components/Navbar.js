@@ -1,13 +1,13 @@
 import { useTheme } from "@emotion/react";
 import {
-  Avatar,
+  // Avatar,
   IconButton,
   Stack,
   TextField,
   Typography,
   Link,
   Button,
-  InputAdornment,
+  // InputAdornment,
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
@@ -23,7 +23,7 @@ import { useNavigate } from "react-router-dom";
 import { isLoggedIn, logoutUser } from "../helpers/authHelper";
 import UserAvatar from "./UserAvatar";
 import HorizontalStack from "./util/HorizontalStack";
-import { RiContrast2Line } from "react-icons/ri";
+// import { RiContrast2Line } from "react-icons/ri";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -122,9 +122,9 @@ const Navbar = () => {
           </IconButton>
           {user ? (
             <>
-              <IconButton href="/messenger">
+              {/* <IconButton href="/messenger">
                 <AiFillMessage />
-              </IconButton>
+              </IconButton> */}
               <IconButton href={"/users/" + username}>
                 <UserAvatar width={30} height={30} username={user.username} />
               </IconButton>

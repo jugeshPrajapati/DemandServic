@@ -1,11 +1,11 @@
 import {
-  Button,
   Card,
   IconButton,
   Stack,
   Typography,
   useTheme,
 } from "@mui/material";
+// import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { AiFillCheckCircle, AiFillEdit, AiFillMessage } from "react-icons/ai";
@@ -23,9 +23,10 @@ import ContentUpdateEditor from "./ContentUpdateEditor";
 import Markdown from "./Markdown";
 
 import "./postCard.css";
-import { MdCancel } from "react-icons/md";
+import { MdCancel,MdOutlineRoom } from "react-icons/md";
 import { BiTrash } from "react-icons/bi";
-import { BsReplyFill } from "react-icons/bs";
+
+// import { BsReplyFill } from "react-icons/bs";
 
 const PostCard = (props) => {
   const { preview, removePost } = props;
@@ -89,6 +90,10 @@ const PostCard = (props) => {
       await unlikePost(post._id, user);
     }
   };
+  const handleMap = async () => {
+    //call here map function 
+   console.log("click on map:"+post._id+" "+user);
+  };
 
   return (
     <Card sx={{ padding: 0 }} className="post-card">
@@ -104,17 +109,22 @@ const PostCard = (props) => {
               padding: theme.spacing(1),
             }}
           >
+            
             <LikeBox
               likeCount={likeCount}
               liked={post.liked}
               onLike={handleLike}
             />
+            {/* icon button added here  */}
+            <IconButton size="sm" onClick={handleMap}><MdOutlineRoom   /></IconButton>
           </Stack>
           <PostContentBox clickable={preview} post={post} editing={editing}>
             <HorizontalStack justifyContent="space-between">
               <ContentDetails
                 username={post.poster.username}
                 createdAt={post.createdAt}
+                // change her to display location
+
                 edited={post.edited}
                 preview={preview === "secondary"}
               />
@@ -182,6 +192,8 @@ const PostCard = (props) => {
               >
                 {post.commentCount}
               </Typography>
+              {/* show location name here */}
+              <h6>location</h6>
             </HorizontalStack>
           </PostContentBox>
         </HorizontalStack>
