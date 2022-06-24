@@ -118,7 +118,9 @@ const PostCard = (props) => {
               onLike={handleLike}
             />
             {/* icon button added here  map calling */}
-            <IconButton size="sm" onClick={() => navigate(`/posts/map:${post.location.coordinates}`)}><MdOutlineRoom   /></IconButton>
+            
+            {/* export={post.location.coordinates} */}
+            <IconButton size="sm" onClick={() => navigate(`/posts/map:${post._id}`)}><MdOutlineRoom   /></IconButton>
           </Stack>
           <PostContentBox clickable={preview} post={post} editing={editing}>
             <HorizontalStack justifyContent="space-between">

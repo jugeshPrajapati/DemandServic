@@ -61,7 +61,7 @@ function App() {
           <Route path="/users/:id" element={<ProfileView />} />
           <Route path="/login" element={<LoginView />} />
           {/* set map url */}
-          <Route path="/posts/map:coords" element={<Map/>} /> 
+          <Route path="/posts/map:id" element={<Map/>} /> 
           <Route path="/signup" element={<SignupView />} />
         </Routes>
       </BrowserRouter>
