@@ -25,7 +25,7 @@ import Markdown from "./Markdown";
 import "./postCard.css";
 import { MdCancel,MdOutlineRoom } from "react-icons/md";
 import { BiTrash } from "react-icons/bi";
-
+import Map from "./Map";
 // import { BsReplyFill } from "react-icons/bs";
 
 const PostCard = (props) => {
@@ -90,10 +90,12 @@ const PostCard = (props) => {
       await unlikePost(post._id, user);
     }
   };
-  const handleMap = async () => {
-    //call here map function 
-   console.log("click on map:"+post._id+" "+user);
-  };
+  // const handleMap = async () => {
+  //   //call here map function 
+  //  console.log("click on map:"+post._id+" "+post.location.coordinates);
+  //  <Map post={post} key={post._id} />
+  // //  ;
+  // };
 
   return (
     <Card sx={{ padding: 0 }} className="post-card">
@@ -115,8 +117,8 @@ const PostCard = (props) => {
               liked={post.liked}
               onLike={handleLike}
             />
-            {/* icon button added here  */}
-            <IconButton size="sm" onClick={handleMap}><MdOutlineRoom   /></IconButton>
+            {/* icon button added here  map calling */}
+            <IconButton size="sm" onClick={() => navigate(`/posts/map:${post.location.coordinates}`)}><MdOutlineRoom   /></IconButton>
           </Stack>
           <PostContentBox clickable={preview} post={post} editing={editing}>
             <HorizontalStack justifyContent="space-between">
