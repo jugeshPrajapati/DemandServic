@@ -69,15 +69,11 @@ const Profile = (props) => {
             </Box>
           )}
 
-          {currentUser && user._id !== currentUser.userId && (
-            <Button variant="outlined" onClick={props.handleMessage}>
-              Message
-            </Button>
-          )}
+          {/* msg*/}
 
           <HorizontalStack>
             <Typography color="text.secondary">
-              Likes <b>{props.profile.posts.likeCount}</b>
+              Upvotes <b>{props.profile.posts.likeCount}</b>
             </Typography>
             <Typography color="text.secondary">
               Posts <b>{props.profile.posts.count}</b>

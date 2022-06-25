@@ -122,9 +122,7 @@ const Navbar = () => {
           </IconButton>
           {user ? (
             <>
-              {/* <IconButton href="/messenger">
-                <AiFillMessage />
-              </IconButton> */}
+              {/* msg*/}
               <IconButton href={"/users/" + username}>
                 <UserAvatar width={30} height={30} username={user.username} />
               </IconButton>

@@ -120,7 +120,7 @@ const PostCard = (props) => {
             {/* icon button added here  map calling */}
             
             {/* export={post.location.coordinates} */}
-            <IconButton size="sm" onClick={() => navigate(`/posts/map:${post._id}`)}><MdOutlineRoom   /></IconButton>
+            <IconButton size="sm" onClick={() => navigate(`/posts/map:${post._id}`)}><MdOutlineRoom  /></IconButton>
           </Stack>
           <PostContentBox clickable={preview} post={post} editing={editing}>
             <HorizontalStack justifyContent="space-between">
@@ -194,7 +194,7 @@ const PostCard = (props) => {
                 color="text.secondary"
                 sx={{ fontWeight: "bold" }}
               >
-                {post.commentCount}
+                {/* {post.commentCount} */}
               </Typography>
               {/* show location name here */}
               <h6>location</h6>

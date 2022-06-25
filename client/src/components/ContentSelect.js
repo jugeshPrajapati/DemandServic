@@ -15,7 +15,6 @@ const ContentSelect = () => {
         onChange={(e) => setContent(e.target.value)}
       >
         <MenuItem value={"post"}>Posts</MenuItem>
-        <MenuItem value={"comment"}>Comments</MenuItem>
       </Select>
     </HorizontalStack>
   );

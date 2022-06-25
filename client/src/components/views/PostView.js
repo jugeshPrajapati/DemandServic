@@ -8,7 +8,6 @@ import PostCard from "../PostCard";
 import Sidebar from "../Sidebar";
 import { useParams } from "react-router-dom";
 import { getPost } from "../../api/posts";
-import Comments from "../Comments";
 import ErrorAlert from "../ErrorAlert";
 import { isLoggedIn } from "../../helpers/authHelper";
 
@@ -46,8 +45,7 @@ const PostView = () => {
           ) : post ? (
             <Stack spacing={2}>
               <PostCard post={post} key={post._id} />
-
-              <Comments />
+              {/* // Comm*/}
             </Stack>
           ) : (
             error && <ErrorAlert error={error} />

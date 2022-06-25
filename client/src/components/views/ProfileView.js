@@ -3,12 +3,10 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getUser, updateUser } from "../../api/users";
 import { isLoggedIn } from "../../helpers/authHelper";
-import CommentBrowser from "../CommentBrowser";
 
 import ErrorAlert from "../ErrorAlert";
 import FindUsers from "../FindUsers";
 import Footer from "../Footer";
-// import GoBack from "../GoBack";
 import GridLayout from "../GridLayout";
 import Loading from "../Loading";
 import MobileProfile from "../MobileProfile";
@@ -53,9 +51,7 @@ const ProfileView = () => {
     setEditing(!editing);
   };
 
-  const handleMessage = () => {
-    navigate("/messenger", { state: { user: profile.user } });
-  };
+  // msg
 
   useEffect(() => {
     fetchUser();
@@ -88,7 +84,6 @@ const ProfileView = () => {
           key="liked"
         />
       ),
-      comments: <CommentBrowser profileUser={profile.user} />,
     };
   }
 
@@ -104,7 +99,7 @@ const ProfileView = () => {
               editing={editing}
               handleSubmit={handleSubmit}
               handleEditing={handleEditing}
-              handleMessage={handleMessage}
+              //msg
               validate={validate}
             />
             <Stack spacing={2}>
@@ -128,7 +123,7 @@ const ProfileView = () => {
               editing={editing}
               handleSubmit={handleSubmit}
               handleEditing={handleEditing}
-              handleMessage={handleMessage}
+              //msg
               validate={validate}
             />
 
