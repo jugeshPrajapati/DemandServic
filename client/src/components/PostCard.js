@@ -186,7 +186,7 @@ const PostCard = (props) => {
               ))}
 
             <HorizontalStack sx={{ mt: 1 }}>
-              <AiFillMessage />
+          
               <Typography
                 variant="subtitle2"
                 color="text.secondary"
