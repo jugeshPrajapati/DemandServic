@@ -25,8 +25,6 @@ import Markdown from "./Markdown";
 import "./postCard.css";
 import { MdCancel,MdOutlineRoom } from "react-icons/md";
 import { BiTrash } from "react-icons/bi";
-import Map from "./Map";
-// import { BsReplyFill } from "react-icons/bs";
 
 const PostCard = (props) => {
   const { preview, removePost } = props;
@@ -43,6 +41,7 @@ const PostCard = (props) => {
   const [confirm, setConfirm] = useState(false);
   const [post, setPost] = useState(postData);
   const [likeCount, setLikeCount] = useState(post.likeCount);
+
 
   let maxHeight = null;
   if (preview === "primary") {
@@ -90,14 +89,11 @@ const PostCard = (props) => {
       await unlikePost(post._id, user);
     }
   };
-  // const handleMap = async () => {
-  //   //call here map function 
-  //  console.log("click on map:"+post._id+" "+post.location.coordinates);
-  //  <Map post={post} key={post._id} />
-  // //  ;
-  // };
-
+  // handleMap
+  const lat = post.location.coordinates[0];
+  const long= post.location.coordinates[1];
   return (
+    
     <Card sx={{ padding: 0 }} className="post-card">
       <Box className={preview}>
         <HorizontalStack spacing={0} alignItems="initial">
@@ -120,13 +116,15 @@ const PostCard = (props) => {
             {/* icon button added here  map calling */}
             
             {/* export={post.location.coordinates} */}
-            <IconButton size="sm" onClick={() => navigate(`/posts/map:${post._id}`)}><MdOutlineRoom   /></IconButton>
+      
+            <IconButton size="sm" onClick={() => navigate(`/posts/map:${lat}+${long}`)}><MdOutlineRoom   /></IconButton>
           </Stack>
           <PostContentBox clickable={preview} post={post} editing={editing}>
             <HorizontalStack justifyContent="space-between">
               <ContentDetails
                 username={post.poster.username}
                 createdAt={post.createdAt}
+                location={post.location}
                 // change her to display location
 
                 edited={post.edited}
@@ -194,16 +192,17 @@ const PostCard = (props) => {
                 color="text.secondary"
                 sx={{ fontWeight: "bold" }}
               >
-                {post.commentCount}
               </Typography>
               {/* show location name here */}
               <h6>location</h6>
+              
             </HorizontalStack>
           </PostContentBox>
         </HorizontalStack>
       </Box>
     </Card>
   );
+
 };
 
-export default PostCard;
+export default PostCard

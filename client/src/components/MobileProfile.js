@@ -86,13 +86,7 @@ const MobileProfile = (props) => {
                 </i>
               </Typography>
             )}
-            {currentUser && user._id !== currentUser.userId && (
-              <Box sx={{ mt: 2 }}>
-                <Button variant="outlined" onClick={props.handleMessage}>
-                  Message
-                </Button>
-              </Box>
-            )}
+            {/* msg */}
             {props.editing && (
               <Box>
                 <ContentUpdateEditor

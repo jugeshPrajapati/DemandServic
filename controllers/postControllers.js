@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Post = require("../models/Post");
 const User = require("../models/User");
-const Comment = require("../models/Comment");
 const PostLike = require("../models/PostLike");
 const paginate = require("../util/paginate");
 const cooldown = new Set();
@@ -110,7 +109,7 @@ const deletePost = async (req, res) => {
 
     await post.remove();
 
-    await Comment.deleteMany({ post: post._id });
+    // await Comment.deleteMany({ post: post._id });
 
     return res.json(post);
   } catch (err) {

@@ -41,16 +41,7 @@ const getUser = async (params) => {
   }
 };
 
-const getRandomUsers = async (query) => {
-  try {
-    const res = await fetch(
-      BASE_URL + "api/users/random?" + new URLSearchParams(query)
-    );
-    return res.json();
-  } catch (err) {
-    console.log(err);
-  }
-};
+// getRandomUsers 
 
 const updateUser = async (user, data) => {
   try {
@@ -69,4 +60,4 @@ const updateUser = async (user, data) => {
   }
 };
 
-export { signup, login, getUser, getRandomUsers, updateUser };
+export { signup, login, getUser, updateUser };

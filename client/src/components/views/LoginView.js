@@ -1,9 +1,9 @@
 import {
   // Alert,
-  Button,
   // Checkbox,
-  Container,
   // FormControlLabel,
+  Button,
+  Container,
   Link,
   Stack,
   TextField,
@@ -48,7 +48,7 @@ const LoginView = () => {
       <Stack alignItems="center">
         <Typography variant="h2" color="text.secondary" sx={{ mb: 6 }}>
           <Link href="/" color="inherit" underline="none">
-            PostIt
+            D&S
           </Link>
         </Typography>
         <Typography variant="h5" gutterBottom>
