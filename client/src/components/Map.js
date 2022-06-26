@@ -9,8 +9,9 @@ import { MapContainer, TileLayer,Marker,Popup } from 'react-leaflet'
 export default function Map() { 
     const params = useParams();
     console.log(params.id);
-    let lat=params.id.slice(1,11);
-    let long=params.id.slice(12,22);
+    let cord=params.id.split("+");
+    let lat=cord[0].slice(1);
+    let long=cord[1];
   return (
     <>
     <GoBack /> 
