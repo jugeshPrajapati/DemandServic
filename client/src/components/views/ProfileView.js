@@ -5,7 +5,6 @@ import { getUser, updateUser } from "../../api/users";
 import { isLoggedIn } from "../../helpers/authHelper";
 
 import ErrorAlert from "../ErrorAlert";
-import FindUsers from "../FindUsers";
 import Footer from "../Footer";
 import GridLayout from "../GridLayout";
 import Loading from "../Loading";
@@ -127,7 +126,6 @@ const ProfileView = () => {
               validate={validate}
             />
 
-            <FindUsers />
             <Footer />
           </Stack>
         }

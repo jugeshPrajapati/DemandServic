@@ -26,8 +26,6 @@ import "./postCard.css";
 import { MdCancel,MdOutlineRoom } from "react-icons/md";
 import { BiTrash } from "react-icons/bi";
 
-// import { BsReplyFill } from "react-icons/bs";
-
 const PostCard = (props) => {
   const { preview, removePost } = props;
   let postData = props.post;
@@ -91,12 +89,7 @@ const PostCard = (props) => {
       await unlikePost(post._id, user);
     }
   };
-  // const handleMap = async () => {
-  //   //call here map function 
-  //  console.log("click on map:"+post._id+" "+post.location.coordinates);
-  //  <Map post={post} key={post._id} />
-  // //  ;
-  // };
+  // handleMap
   const lat = post.location.coordinates[0];
   const long= post.location.coordinates[1];
   return (
@@ -199,7 +192,6 @@ const PostCard = (props) => {
                 color="text.secondary"
                 sx={{ fontWeight: "bold" }}
               >
-                {post.commentCount}
               </Typography>
               {/* show location name here */}
               <h6>location</h6>
